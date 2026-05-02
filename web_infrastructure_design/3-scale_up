@@ -5,29 +5,48 @@
 ```mermaid
 graph TD
     USER[User] --> DNS[DNS]
-    DNS --> LB1[HAProxy Load Balancer 1]
-    DNS --> LB2[HAProxy Load Balancer 2]
+    DNS --> LB[HAProxy Cluster]
 
-    LB1 <--> LB2
+    subgraph LOAD_BALANCERS [Load Balancer Tier]
+        LB --> LB1[HAProxy Load Balancer 1]
+        LB --> LB2[HAProxy Load Balancer 2]
+        LB1 <--> LB2
+    end
 
-    LB1 --> WEB[Nginx Web Server Tier]
-    LB2 --> WEB
+    LB1 --> WEB1[Nginx Web Server 1]
+    LB1 --> WEB2[Nginx Web Server 2]
+    LB2 --> WEB1
+    LB2 --> WEB2
 
-    WEB --> APP[Application Server Tier]
-    APP --> DB[(Dedicated MySQL Database Tier)]
+    subgraph WEB_TIER [Web Server Tier]
+        WEB1
+        WEB2
+    end
+
+    WEB1 --> APP1[Application Server 1]
+    WEB2 --> APP2[Application Server 2]
+
+    subgraph APP_TIER [Application Tier]
+        APP1
+        APP2
+    end
+
+    APP1 --> DB[(Dedicated MySQL Database Server)]
+    APP2 --> DB
 ```
+
 ## Explanation
 
 * Two clustered load balancers improve redundancy
 * Separate web tier handles HTTP traffic
 * Separate app tier handles business logic
-* Dedicated DB tier improves performance
+* Dedicated database tier improves performance
 * Infrastructure supports scaling by tier
 
 ## Benefits
+
 * High availability
 * Better scalability
 * Easier maintenance
 * Improved security
 * Tier isolation
-
