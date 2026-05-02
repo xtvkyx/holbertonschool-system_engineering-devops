@@ -1,5 +1,4 @@
-```md
-# Distributed Web Infrastructure
+# Distributed web infrastructure
 
 ## Diagram
 
@@ -25,3 +24,20 @@ graph TD
     end
 
     DBP -. Replication .-> DBR
+
+## Explanation
+
+* HAProxy distributes traffic using Round Robin
+* Active-Active setup improves availability
+* Primary database handles writes
+* Replica database handles reads
+* Redundancy improves uptime
+
+## Issues
+
+* Load balancer is still a SPOF
+* Primary DB is a SPOF
+* No firewall
+* No HTTPS
+* No monitoring
+

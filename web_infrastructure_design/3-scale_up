@@ -1,4 +1,3 @@
-```md
 # Scale Up Infrastructure
 
 ## Diagram
@@ -15,15 +14,19 @@ graph TD
 
     WEB --> APP[Application Server Tier]
     APP --> DB[(Dedicated MySQL Database Tier)]
-Explanation
-	•	Two clustered load balancers for redundancy
-	•	Dedicated web tier
-	•	Dedicated application tier
-	•	Dedicated database tier
-Benefits
-	•	High availability
-	•	Better scalability
-	•	Easier maintenance
-	•	Improved security
 
+## Explanation
+
+* Two clustered load balancers improve redundancy
+* Separate web tier handles HTTP traffic
+* Separate app tier handles business logic
+* Dedicated DB tier improves performance
+* Infrastructure supports scaling by tier
+
+## Benefits
+* High availability
+* Better scalability
+* Easier maintenance
+* Improved security
+* Tier isolation
 

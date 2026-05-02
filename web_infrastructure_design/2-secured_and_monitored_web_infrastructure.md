@@ -1,8 +1,6 @@
-```md
 # Secured and Monitored Web Infrastructure
 
 ## Diagram
-```mermaid
 graph TD
     USER[User] --> HTTPS[HTTPS]
     HTTPS --> DNS[DNS]
@@ -32,12 +30,19 @@ graph TD
     M1 --> MON[Monitoring Service]
     M2 --> MON
     MLB --> MON
+
 Explanation
-	•	Firewalls secure traffic
-	•	SSL certificate enables HTTPS
-	•	Monitoring tracks logs, health, and QPS
-Issues
-	•	SSL termination risk
-	•	Single writable DB
-	•	Resource contention
----
+
+* Firewalls secure network layers
+* SSL enables HTTPS encryption
+* Monitoring tracks performance and health
+* Replication improves database reliability
+* Security and observability are enhanced
+
+## Issues
+
+* SSL termination at load balancer can be risky
+* Primary DB remains writable SPOF
+* Monitoring consumes resources
+* More infrastructure complexity
+
