@@ -2,6 +2,7 @@
 # Distributed Web Infrastructure
 
 ## Diagram
+
 ```mermaid
 graph TD
     USER[User] --> BROWSER[Browser]
@@ -24,15 +25,3 @@ graph TD
     end
 
     DBP -. Replication .-> DBR
-Explanation
-	•	HAProxy distributes traffic using Round Robin
-	•	Active-Active setup
-	•	Primary handles writes
-	•	Replica handles reads
-Issues
-	•	Load balancer SPOF
-	•	Primary DB SPOF
-	•	No firewall
-	•	No HTTPS
-	•	No monitoring
----
