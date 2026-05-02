@@ -17,7 +17,7 @@ graph TD
 
     APP --> RESPONSE[HTTP Response]
     RESPONSE --> USER
-
+```
 ## Explanation
 
 * One domain name (foobar.com) points to the server IP

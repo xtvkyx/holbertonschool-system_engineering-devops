@@ -1,7 +1,5 @@
----
-
 ### `3-scale_up`
-```md
+
 # Scale Up Infrastructure
 
 ## Diagram
@@ -19,7 +17,7 @@ graph TD
 
     WEB --> APP[Application Server Tier]
     APP --> DB[(Dedicated MySQL Database Tier)]
-
+```
 ## Explanation
 
 * Two clustered load balancers improve redundancy

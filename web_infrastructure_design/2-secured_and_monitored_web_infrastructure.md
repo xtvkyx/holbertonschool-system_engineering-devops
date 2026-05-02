@@ -2,7 +2,7 @@
 ---
 
 ### `2-secured_and_monitored_web_infrastructure.md`
-```md
+
 # Secured and Monitored Web Infrastructure
 
 ## Diagram
@@ -37,8 +37,8 @@ graph TD
     M1 --> MON[Monitoring Service]
     M2 --> MON
     MLB --> MON
-
-Explanation
+```
+## Explanation
 
 * Firewalls secure network layers
 * SSL enables HTTPS encryption

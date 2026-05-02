@@ -1,7 +1,7 @@
 ---
 
 ### `1-distributed_web_infrastructure.md`
-```md
+
 # Distributed Web Infrastructure
 
 ## Diagram
@@ -28,7 +28,7 @@ graph TD
     end
 
     DBP -. Replication .-> DBR
-
+```
 ## Explanation
 
 * HAProxy distributes traffic using Round Robin
