@@ -1,6 +1,5 @@
 
 ---
-
 ### `3-scale_up.md`
 
 # Scale Up Infrastructure
