@@ -1,6 +1,13 @@
+
+---
+
+### `2-secured_and_monitored_web_infrastructure.md`
+```md
 # Secured and Monitored Web Infrastructure
 
 ## Diagram
+
+```mermaid
 graph TD
     USER[User] --> HTTPS[HTTPS]
     HTTPS --> DNS[DNS]
